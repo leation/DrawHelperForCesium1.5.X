@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>drawForCesium</title>
+    <link href="lib/cesium/Widgets/widgets.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="lib/layui/css/layui.css" rel="stylesheet" />
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cesium-viewer-bottom {
+            display: none;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            display: inline;
+            margin: 10px;
+            padding: 0px;
+            background: white;
+        }
+
+        #loggingText {
+            position: absolute;
+            bottom: 35px;
+            right: 0;
+            display: inline;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/turf/turf.min.js"></script>
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="lib/cesium/Cesium.js"></script>
+    <script type="text/javascript" src="lib/cesium/plotUtil.js"></script>
+    <script type="text/javascript" src="lib/cesium/algorithm.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobeTooltip.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePolygonDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePolylineDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobeRectangleDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobeCircleDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePointDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobeBufferLineDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePointMeasure.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePolylineMeasure.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobePolygonMeasure.js"></script>
+    <script type="text/javascript" src="lib/cesium/PlotStraightArrowDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/PlotAttackArrowDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/PlotPincerArrowDrawer.js"></script>
+    <script type="text/javascript" src="lib/cesium/GlobeTracker.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body oncontextmenu="return false;">
+    <div id="cesiumContainer">
+    </div>
+    <div style="position:absolute;left:10px;top:10px;background-color:transparent;">
+        <input id="drawPolygon" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制多边形" />
+        <input id="drawPolyline" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制折线" />
+        <input id="drawRectangle" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制矩形" />
+        <input id="drawCircle" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制圆" />
+        <input id="drawPoint" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制点" />
+        <input id="drawBufferLine" type="button" class="layui-btn layui-btn-sm layui-btn-normal" value="绘制缓冲区" />
+    </div>
+    <div style="position:absolute;left:10px;top:50px;background-color:transparent;">
+        <input id="posMeasure" type="button" class="layui-btn layui-btn-sm" value="坐标查询" />
+        <input id="disMeasure" type="button" class="layui-btn layui-btn-sm" value="距离量算" />
+        <input id="areaMeasure" type="button" class="layui-btn layui-btn-sm" value="面积量算" />
+    </div>
+    <div style="position:absolute;left:10px;top:90px;background-color:transparent;">
+        <input id="straightArrow" type="button" class="layui-btn layui-btn-sm layui-btn-danger" value="直线箭头" />
+        <input id="attackArrow" type="button" class="layui-btn layui-btn-sm layui-btn-danger" value="攻击箭头" />
+        <input id="pincerArrow" type="button" class="layui-btn layui-btn-sm layui-btn-danger" value="钳击箭头" />
+    </div>
+    <div style="position:absolute;bottom:10px;left:10px;z-index:9999;">
+        <a target="_blank" href="http://www.swhztech.com/about?key=contact&amp;list=0">
+            <img src="images/logo.png" style="height:36px;">
+        </a>
+        <a target="_blank" href="http://www.swhztech.com/about?key=contact&amp;list=0">
+            <p style="font-size:18px;color:whitesmoke;font-weight:bold;">QQ: 744757242&nbsp;&nbsp;&nbsp;&nbsp;phone: 13476165443,15807140398</p>
+        </a>
+    </div>
+</body>
+</html>
